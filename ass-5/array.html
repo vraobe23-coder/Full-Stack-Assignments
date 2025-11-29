@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q2 - Array Operations</title>
+  <style>body{font-family:Arial;padding:16px} input{width:60px;margin-right:6px}</style>
+</head>
+<body>
+  <h1>Q2 — Array Operations</h1>
+  <p>Enter 5 numbers:</p>
+  <div id="inputs">
+    <input id="n0" type="number">
+    <input id="n1" type="number">
+    <input id="n2" type="number">
+    <input id="n3" type="number">
+    <input id="n4" type="number">
+    <button id="run">Run</button>
+  </div>
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById('run').addEventListener('click', function () {
+      const arr = [];
+      for (let i = 0; i < 5; i++) {
+        const v = parseFloat(document.getElementById('n' + i).value);
+        if (Number.isNaN(v)) {
+          document.getElementById('result').textContent = 'Please fill all 5 numbers.';
+          return;
+        }
+        arr.push(v);
+      }
+
+      const largest = Math.max(...arr);
+      const smallest = Math.min(...arr);
+
+      const asc = [...arr].sort((x,y) => x - y);
+      const desc = [...asc].reverse();
+
+      document.getElementById('result').textContent =
+`Array: [${arr.join(', ')}]
+Largest: ${largest}
+Smallest: ${smallest}
+Ascending: [${asc.join(', ')}]
+Descending: [${desc.join(', ')}]`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial;
+            width: 60%;
+            margin: auto;
+            padding-top: 30px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #taskForm {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #taskList .task {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+
+<div id="taskForm">
+    <input type="text" id="title" placeholder="Task Title">
+    <textarea id="description" placeholder="Task Description"></textarea>
+    <button onclick="addTask()">Add Task</button>
+</div>
+
+<div id="taskList"></div>
+
+<script>
+    function addTask() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+
+        if (title.trim() === "" || description.trim() === "") {
+            alert("Please enter both title and description.");
+            return;
+        }
+
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "task";
+
+        const taskTitle = document.createElement("h3");
+        taskTitle.innerText = title;
+
+        const taskDesc = document.createElement("p");
+        taskDesc.innerText = description;
+
+        const completeBtn = document.createElement("button");
+        completeBtn.innerText = "Mark as Completed";
+        completeBtn.onclick = function () {
+            if (taskTitle.classList.contains("completed")) {
+                taskTitle.classList.remove("completed");
+                taskDesc.classList.remove("completed");
+                completeBtn.innerText = "Mark as Completed";
+            } else {
+                taskTitle.classList.add("completed");
+                taskDesc.classList.add("completed");
+                completeBtn.innerText = "Mark as Incomplete";
+            }
+        };
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+        deleteBtn.onclick = function () {
+            taskDiv.remove();
+        };
+
+        const editBtn = document.createElement("button");
+        editBtn.innerText = "Edit";
+        editBtn.onclick = function () {
+            if (editBtn.innerText === "Edit") {
+                const editTitle = document.createElement("input");
+                editTitle.value = taskTitle.innerText;
+
+                const editDesc = document.createElement("textarea");
+                editDesc.value = taskDesc.innerText;
+
+                taskDiv.replaceChild(editTitle, taskTitle);
+                taskDiv.replaceChild(editDesc, taskDesc);
+
+                editBtn.innerText = "Save";
+
+                taskTitle.editRef = editTitle;
+                taskDesc.editRef = editDesc;
+            } else {
+                taskTitle.innerText = taskTitle.editRef.value;
+                taskDesc.innerText = taskDesc.editRef.value;
+
+                taskDiv.replaceChild(taskTitle, taskTitle.editRef);
+                taskDiv.replaceChild(taskDesc, taskDesc.editRef);
+
+                editBtn.innerText = "Edit";
+            }
+        };
+
+        taskDiv.appendChild(taskTitle);
+        taskDiv.appendChild(taskDesc);
+        taskDiv.appendChild(completeBtn);
+        taskDiv.appendChild(editBtn);
+        taskDiv.appendChild(deleteBtn);
+
+        document.getElementById("taskList").appendChild(taskDiv);
+
+        document.getElementById("title").value = "";
+        document.getElementById("description").value = "";
+    }
+</script>
+
+</body>
+</html>

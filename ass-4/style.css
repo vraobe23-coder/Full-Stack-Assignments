@@ -1,0 +1,101 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+.header {
+    background: #001f7d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+.navbar a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar a:hover {
+    color: yellow;
+}
+#main-title::first-letter {
+    color: #ffcc00;
+    font-size: 45px;
+}
+.hero {
+    text-align: center;
+    padding: 20px;
+}
+.video-section {
+    text-align: center;
+    padding: 20px;
+}
+.highlight-video {
+    width: 80%;
+    border-radius: 10px;
+}
+.event-list li:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.schedule-table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+.schedule-table th, .schedule-table td {
+    padding: 12px;
+    border: 1px solid black;
+}
+.reg-form {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.reg-form input, .reg-form select {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.btn {
+    background: #001f7d;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+}
+.btn:hover {
+    background: #0046ff;
+}
+.grid-gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.grid-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.contact-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.faq li {
+    margin-bottom: 10px;
+}
+@media(max-width:768px) {
+    .reg-form {
+        width: 90%;
+    }
+    .contact-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .highlight-video {
+        width: 100%;
+    }
+}

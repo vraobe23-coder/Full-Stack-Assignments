@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+<div class="brand">WanderWise</div>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="packages.html">Packages</a>
+<a href="booking.html">Booking</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main class="container">
+<div class="form-card">
+<h2>Booking Price Estimator</h2>
+<form id="est-form">
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+  <select id="est-package" class="input">
+    <option value="">Select package</option>
+    <option value="1">Goa</option>
+    <option value="2">Manali</option>
+    <option value="3">Dubai</option>
+    <option value="4">Thailand</option>
+  </select>
+  <input id="est-checkin" class="input" type="date">
+  <input id="est-checkout" class="input" type="date">
+  <input id="est-guests" class="input" type="number" min="1" value="1">
+  <input id="est-promo" class="input" placeholder="Promo code">
+</div>
+<div class="summary" id="est-total">Enter details to see estimate</div>
+<div style="margin-top:10px">
+  <button id="est-submit" class="input primary" type="submit" disabled>Submit Booking</button>
+</div>
+</form>
+</div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

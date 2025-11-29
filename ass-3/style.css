@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #0033cc;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+section {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+form {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+button {
+    padding: 10px 20px;
+    background: #0033cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.gallery {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}

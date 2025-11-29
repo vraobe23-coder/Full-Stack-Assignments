@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --accent:#00c3ff;
+      --dark:#222;
+      --muted:#666;
+      --radius:10px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.5;
+    }
+    .container{max-width:1000px;margin:24px auto;padding:0 16px;}
+    h1{text-align:center;margin:8px 0 16px}
+    header{
+      background:var(--dark);
+      color:#fff;
+      padding:18px;
+      border-radius:var(--radius);
+      text-align:center;
+    }
+    nav{margin-top:8px}
+    nav a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 10px;
+      font-weight:600;
+    }
+    section{
+      background:var(--card);
+      margin:20px 0;
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+    /* About */
+    .about{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .about .bio{flex:1;min-width:240px}
+    .profile-img{width:200px;height:200px;object-fit:cover;border-radius:12px}
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border:1px solid #bbb;text-align:center}
+    th{background:#f0f8ff;font-weight:700}
+    /* Lists */
+    ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+    ul.skills li{
+      padding:8px 12px;border-radius:999px;border:1px solid #ddd;
+      background:linear-gradient(180deg,#fff,#f7f9fb);
+      display:inline-flex;align-items:center;gap:8px;font-weight:600;
+    }
+    ul.skills li::before{content:'•';color:var(--accent);margin-right:6px}
+    ol.timeline{margin-top:12px;padding-left:18px}
+    /* Projects */
+    .project{margin-bottom:12px}
+    .project a{color:var(--accent);text-decoration:none;font-weight:700}
+    /* Contact */
+    .contact a{color:var(--accent);text-decoration:none}
+    footer{
+      text-align:center;padding:12px;margin-top:8px;color:#fff;background:var(--dark);
+      border-radius:8px;
+    }
+    @media (max-width:640px){
+      .about{flex-direction:column;align-items:flex-start}
+      .profile-img{width:160px;height:160px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Personal Portfolio</h1>
+
+    <header>
+      <h2>Tagline: A Passionate Developer &amp; Learner</h2>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about">
+        <div class="bio">
+          <p><b>Hello!</b> My name is <strong>Varshith Rao</strong>. I am an aspiring developer with a strong interest in <em>web development</em> and embedded systems. I enjoy building projects that combine creativity with logical thinking. I love learning new technologies and improving my skills every day.</p>
+          <p>I am currently pursuing <u>B.Tech</u> and working on multiple personal projects. <mark>I believe consistency beats intensity.</mark></p>
+        </div>
+        <div>
+          <img src="profile.jpg" alt="Profile Photo" title="John Doe" width="200" height="200" class="profile-img" />
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <table>
+        <tr>
+          <th>Degree</th>
+          <th>Institution</th>
+          <th>Year</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td rowspan="2">B.Tech</td>
+          <td>ABC Institute of Technology</td>
+          <td>2023 - Present</td>
+          <td>Ongoing</td>
+        </tr>
+        <tr>
+          <td colspan="3">Specialization: Electronics &amp; Communication Engineering</td>
+        </tr>
+        <tr>
+          <td>Intermediate</td>
+          <td>XYZ Junior College</td>
+          <td>2021</td>
+          <td>92%</td>
+        </tr>
+        <tr>
+          <td>High School</td>
+          <td>Sunshine School</td>
+          <td>2019</td>
+          <td>10 CGPA</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML, CSS, JavaScript</li>
+        <li>C and C++</li>
+        <li>Embedded Systems</li>
+        <li>Problem Solving</li>
+      </ul>
+
+      <h3>Learning Timeline</h3>
+      <ol class="timeline">
+        <li>2021 - Started programming basics</li>
+        <li>2022 - Learned C and C++</li>
+        <li>2023 - Started web development</li>
+        <li>2024 - Built multiple projects</li>
+      </ol>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>This simple portfolio is built using <i>HTML</i> and <u>CSS</u>. It shows introduction, education, skills and contact details.</p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+      </div>
+
+      <div class="project">
+        <h3>Super Tic-Tac-Toe (C++)</h3>
+        <p>OOP-based console game using 2D vectors and win-checking logic. <a href="#" target="_blank">Source</a></p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:john@example.com">vrao_be23@thapar.edu</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">My LinkedIn</a></p>
+      <p>GitHub: <a href="https://github.com" target="_blank" rel="noopener noreferrer">My GitHub</a></p>
+    </section>
+
+    <footer>
+      Made by varshith rao
+    </footer>
+  </div>
+</body>
+</html>
